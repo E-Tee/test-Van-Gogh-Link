@@ -1,6 +1,20 @@
 /*Дмитрий Бастич +79633231571*/
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@font-face {
+  font-family: "inter";
+  font-style: normal;
+  font-weight: 400, 500, 600;
+  /* Браузер сначала попробует найти шрифт локально */
+  src: local("Inter"),
+       /* Если не получилось, загрузит woff2 */
+       url("../font/Inter-Regular.woff2") format("woff2"),
+       url("../font/Inter-SemiBold.woff2") format("woff2"),
+       url("../font/Inter-Bold.woff2") format("woff2"),
+       /* Если браузер не поддерживает woff2, загрузит woff */
+       url("../font/Inter-Regular.woff") format("woff"),
+       url("../font/Inter-SemiBold.woff") format("woff"),
+       url("../font/Inter-Bold.woff") format("woff");
+}
 
 html {
     box-sizing: border-box;
@@ -11,7 +25,6 @@ html {
 *::before,
 *::after {
     box-sizing: inherit;
-    -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -25,7 +38,8 @@ img {
 
 body {
     min-width: 360px;
-    font-family: 'font', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-display: block;
 }
 
 .list-reset {
@@ -564,6 +578,9 @@ line-height: 150%; /* 48px */
 }
 
 @media  (max-width: 420px)  {
+    .container  {
+        padding-left: 22px;
+    }
     .hero-title {
         font-size: 38px;
     }
